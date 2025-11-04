@@ -1,5 +1,4 @@
 import Link from 'next/link'
-
 export type Project = {
   id: string
   title: string
@@ -13,6 +12,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="rounded-2xl border p-4 hover:shadow-md transition">
       {project.image_url && (
+        // eslint-disable-next-line @next/next/no-img-element
         <img src={project.image_url} alt={project.title} className="w-full h-48 object-cover rounded-xl mb-3" />
       )}
       <h3 className="text-lg font-semibold">{project.title}</h3>

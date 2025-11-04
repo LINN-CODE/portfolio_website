@@ -1,38 +1,74 @@
-import { getSupabaseAdmin } from '@/lib/supabase'
-import ProjectCard from '@/components/ProjectCard'
-import ContactForm from '@/components/ContactForm'
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
-export default async function HomePage() {
-  const supabase = getSupabaseAdmin()
-  const { data: projects } = await supabase
-    .from('projects')
-    .select('*')
-    .order('created_at', { ascending: false })
-    .limit(3)
+import Link from 'next/link'
 
+export default function HomePage() {
   return (
-    <div className="grid gap-10">
-      <section className="grid md:grid-cols-2 gap-8 items-center">
+    <div className="grid gap-16">
+      {/* HERO */}
+      <section className="grid md:grid-cols-2 gap-10 items-center">
         <div>
-          <h1 className="text-3xl md:text-5xl font-bold">Hi, I’m Your Name</h1>
-          <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-            I build IoT, AI, and full-stack apps. Here are some of my recent projects and how to reach me.
+          <p className="uppercase tracking-widest text-xs text-gray-500">Computer Engineering • Singapore Polytechnic</p>
+          <h1 className="mt-2 text-4xl md:text-6xl font-extrabold leading-tight">LINN BHONE ENT— Aspiring System Engineer</h1>
+          <p className="mt-5 text-lg text-gray-700 dark:text-gray-300 max-w-xl">
+            I’m a Computer Engineering student at Singapore Polytechnic, passionate about technology and systems design. I’m
+            growing toward a System Engineer role, with hands‑on learning in AWS, DevOps practices, and modern
+            web development.
           </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3 text-sm">
+            <span className="rounded-full border px-3 py-1">AWS (cloud fundamentals)</span>
+            <span className="rounded-full border px-3 py-1">DevOps (CI/CD basics)</span>
+            <span className="rounded-full border px-3 py-1">Web (React/Next.js)</span>
+            <span className="rounded-full border px-3 py-1">IoT & Embedded</span>
+          </div>
+          <div className="mt-8 flex gap-4">
+            <Link href="#experience" className="rounded-full border px-5 py-2">Experience</Link>
+            <a href="#contact" className="rounded-full border px-5 py-2">Contact</a>
+          </div>
         </div>
+        {/* Portrait: place your photo at public/me.jpg */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=80" alt="hero" className="rounded-2xl" />
+        <img src="/me.JPEG" alt="Portrait of Linn Bhone" className="w-full rounded-2xl object-cover shadow-xl" />
       </section>
 
-      <section className="grid gap-4">
-        <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold">Featured projects</h2>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {(projects ?? []).map((p) => <ProjectCard key={p.id} project={p as any} />)}
-        </div>
+      {/* EXPERIENCE */}
+      <section id="experience" className="grid gap-6">
+        <h2 className="text-2xl font-semibold">Experience</h2>
+        <article className="rounded-2xl border p-6 grid gap-3">
+          <header className="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <h3 className="font-semibold">Junior Application Engineer — Efunity Pte Ltd</h3>
+              <p className="text-sm text-gray-500">Internship • Mar 2025 – Aug 2025 • Singapore (On‑site)</p>
+            </div>
+          </header>
+          <p className="text-sm text-gray-700 dark:text-gray-300">
+            Contributed to engineering solutions for energy efficiency and management. Assisted in design, integration,
+            testing and deployment of monitoring & automation systems (SCADA/HMI, Energy Management Systems,
+            Power Quality Monitoring). Prepared documentation and drawings, debugged hardware/software, and
+            collaborated with cross‑functional teams to ensure successful commissioning.
+          </p>
+          <ul className="text-sm list-disc pl-5 grid gap-1">
+            <li>SCADA/HMI configuration & graphical interface design</li>
+            <li>Energy/Power Quality monitoring fundamentals</li>
+            <li>Hardware–software integration for industrial monitoring</li>
+            <li>Testing & commissioning; real‑time data acquisition & alert logic</li>
+            <li>Project coordination, scheduling, and technical documentation</li>
+            <li>Troubleshooting mindset; clear communication with engineers & clients</li>
+          </ul>
+        </article>
       </section>
 
-      <ContactForm />
+      {/* CONTACT */}
+      <section id="contact" className="rounded-2xl border p-6 grid gap-3">
+        <h2 className="text-2xl font-semibold">Get in touch</h2>
+        <p className="text-sm text-gray-700 dark:text-gray-300">Open to system engineering and full‑stack opportunities, internships, and collaborations.</p>
+        <div className="flex flex-wrap gap-3 text-sm">
+          <a className="rounded-xl border px-4 py-2" href="mailto:you@example.com">Email</a>
+          <a className="rounded-xl border px-4 py-2" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a className="rounded-xl border px-4 py-2" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </section>
     </div>
   )
 }
