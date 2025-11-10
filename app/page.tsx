@@ -55,12 +55,19 @@ export default function HomePage() {
             <li>Troubleshooting mindset; clear communication with engineers & clients</li>
           </ul>
         </article>
-      </section>
-
-     
-      <section id="contact" className="rounded-2xl border p-6 grid gap-3">
+      </section>     
+      <section id="contact" className="rounded-2xl border p-6 grid gap-4">
         <h2 className="text-2xl font-semibold">Get in touch</h2>
         <p className="text-sm text-gray-700 dark:text-gray-300">Open to system engineering and full‑stack opportunities, internships, and collaborations.</p>
+        <textarea placeholder="Enter a message" className="border rounded-xl p-3 w-full min-h-[50px] resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+        <button
+  type="submit"
+  className="rounded-xl border px-6 py-2 font-medium hover:bg-blue-500 hover:text-white transition w-fit"
+>
+  Send Message
+</button>
+
+        
         <div className="flex flex-wrap gap-3 text-sm">
           <a className="rounded-xl border px-4 py-2" href="mailto:LINNENT.23@ICHAT.SP.EDU.SG">Email</a>
           <a className="rounded-xl border px-4 py-2" href="https://sg.linkedin.com/in/linn-bhone-ent-6bb7bb277" target="_blank" rel="noreferrer">LinkedIn</a>
