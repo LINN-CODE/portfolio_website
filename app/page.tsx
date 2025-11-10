@@ -27,12 +27,10 @@ export default function HomePage() {
             <a href="#contact" className="rounded-full border px-5 py-2">Contact</a>
           </div>
         </div>
-        {/* Portrait: place your photo at public/me.jpg */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
+       
         <img src="/me.JPEG" alt="Portrait of Linn Bhone" className="w-full rounded-2xl object-cover shadow-xl" />
       </section>
 
-      {/* EXPERIENCE */}
       <section id="experience" className="grid gap-6">
         <h2 className="text-2xl font-semibold">Experience</h2>
         <article className="rounded-2xl border p-6 grid gap-3">
@@ -59,14 +57,14 @@ export default function HomePage() {
         </article>
       </section>
 
-      {/* CONTACT */}
+     
       <section id="contact" className="rounded-2xl border p-6 grid gap-3">
         <h2 className="text-2xl font-semibold">Get in touch</h2>
         <p className="text-sm text-gray-700 dark:text-gray-300">Open to system engineering and full‑stack opportunities, internships, and collaborations.</p>
         <div className="flex flex-wrap gap-3 text-sm">
-          <a className="rounded-xl border px-4 py-2" href="mailto:you@example.com">Email</a>
-          <a className="rounded-xl border px-4 py-2" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a className="rounded-xl border px-4 py-2" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+          <a className="rounded-xl border px-4 py-2" href="mailto:LINNENT.23@ICHAT.SP.EDU.SG">Email</a>
+          <a className="rounded-xl border px-4 py-2" href="https://sg.linkedin.com/in/linn-bhone-ent-6bb7bb277" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a className="rounded-xl border px-4 py-2" href="https://github.com/LINN-CODE" target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </section>
     </div>
