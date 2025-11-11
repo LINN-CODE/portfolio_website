@@ -32,17 +32,13 @@ export default function ContactForm() {
   onSubmit={async (e) => {
     e.preventDefault()
     const form = e.currentTarget
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-    }
+    const data = Object.fromEntries(new FormData(form).entries())
     const res = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     })
-    alert(res.ok ? '✅ Message sent!' : '❌ Failed to send')
+    alert(res.ok ? 'Message sent!' : 'Failed to send')
     form.reset()
   }}
   className="grid gap-3 max-w-xl"
