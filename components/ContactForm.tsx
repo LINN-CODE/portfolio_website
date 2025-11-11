@@ -28,16 +28,51 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="rounded-2xl border p-4 grid gap-3 max-w-xl" id="contact">
-      <h2 className="text-xl font-semibold">Contact me</h2>
-      <input name="name" placeholder="Your name" className="border rounded-xl px-3 py-2 bg-transparent" required />
-      <input name="email" type="email" placeholder="Your email" className="border rounded-xl px-3 py-2 bg-transparent" required />
-      <textarea name="message" placeholder="Your message" rows={5} className="border rounded-xl px-3 py-2 bg-transparent" required />
-      <button disabled={status==='loading'} className="rounded-xl px-4 py-2 border w-fit">
-        {status==='loading' ? 'Sending…' : 'Send'}
-      </button>
-      {status==='success' && <p className="text-green-600">Thanks! I will get back to you soon.</p>}
-      {status==='error' && <p className="text-red-600">{error}</p>}
-    </form>
+    <form
+  onSubmit={async (e) => {
+    e.preventDefault()
+    const form = e.currentTarget
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+    }
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+    alert(res.ok ? '✅ Message sent!' : '❌ Failed to send')
+    form.reset()
+  }}
+  className="grid gap-3 max-w-xl"
+>
+  <input
+    name="name"
+    placeholder="Your name"
+    className="border rounded-xl px-3 py-2 bg-transparent"
+    required
+  />
+  <input
+    name="email"
+    type="email"
+    placeholder="Your email"
+    className="border rounded-xl px-3 py-2 bg-transparent"
+    required
+  />
+  <textarea
+    name="message"
+    placeholder="Enter a message"
+    className="w-full min-h-[120px] rounded-xl border px-3 py-2 bg-transparent"
+    required
+  />
+  <button
+    type="submit"
+    className="rounded-xl border px-6 py-2 font-medium hover:bg-blue-500 hover:text-white transition w-fit"
+  >
+    Send Message
+  </button>
+</form>
+
   )
 }

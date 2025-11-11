@@ -1,5 +1,6 @@
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
+import ContactForm from '@/components/ContactForm'
 
 import Link from 'next/link'
 
@@ -59,13 +60,7 @@ export default function HomePage() {
       <section id="contact" className="rounded-2xl border p-6 grid gap-4">
         <h2 className="text-2xl font-semibold">Get in touch</h2>
         <p className="text-sm text-gray-700 dark:text-gray-300">Open to system engineering and full‑stack opportunities, internships, and collaborations.</p>
-        <textarea placeholder="Enter a message" className="border rounded-xl p-3 w-full min-h-[50px] resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"/>
-        <button
-  type="submit"
-  className="rounded-xl border px-6 py-2 font-medium hover:bg-blue-500 hover:text-white transition w-fit"
->
-  Send Message
-</button>
+        <ContactForm />
 
         
         <div className="flex flex-wrap gap-3 text-sm">
