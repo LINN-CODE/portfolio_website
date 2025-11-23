@@ -1,6 +1,7 @@
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 import ContactForm from '@/components/ContactForm'
+import ExperienceSection from '@/components/Experience'
 
 import Link from 'next/link'
 
@@ -32,34 +33,8 @@ export default function HomePage() {
         <img src="/me.JPEG" alt="Portrait of Linn Bhone" className="w-full rounded-2xl object-cover shadow-xl" />
       </section>
 
-      <section id="experience" className="grid gap-6">
-        <h2 className="text-2xl font-semibold">Experience</h2>
-        <article className="rounded-2xl border p-6 grid gap-3">
-          <header className="flex flex-wrap items-center justify-between gap-2">
-            <div>
-              <h3 className="font-semibold">Junior Application Engineer — Efunity Pte Ltd</h3>
-              <p className="text-sm text-gray-500">Internship • Mar 2025 – Aug 2025 • Singapore (On‑site)</p>
-            </div>
-          </header>
-          <p className="text-sm text-gray-700 dark:text-gray-300">
-            Contributed to engineering solutions for energy efficiency and management. Assisted in design, integration,
-            testing and deployment of monitoring & automation systems (SCADA/HMI, Energy Management Systems,
-            Power Quality Monitoring). Prepared documentation and drawings, debugged hardware/software, and
-            collaborated with cross‑functional teams to ensure successful commissioning.
-          </p>
-          <ul className="text-sm list-disc pl-5 grid gap-1">
-            <li>SCADA/HMI configuration & graphical interface design</li>
-            <li>Energy/Power Quality monitoring fundamentals</li>
-            <li>Hardware–software integration for industrial monitoring</li>
-            <li>Testing & commissioning; real‑time data acquisition & alert logic</li>
-            <li>Project coordination, scheduling, and technical documentation</li>
-            <li>Troubleshooting mindset; clear communication with engineers & clients</li>
-          </ul>
-        </article>
-      </section>     
-      <section id="contact" className="rounded-2xl border p-6 grid gap-4">
-        <h2 className="text-2xl font-semibold">Get in touch</h2>
-        <p className="text-sm text-gray-700 dark:text-gray-300">Open to system engineering and full‑stack opportunities, internships, and collaborations.</p>
+      {/* EXPERIENCE */}
+      <ExperienceSection />
         <ContactForm />
 
         
