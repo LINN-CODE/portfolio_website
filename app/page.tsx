@@ -2,6 +2,7 @@ export const dynamic = 'force-dynamic'
 export const revalidate = 0
 import ContactForm from '@/components/ContactForm'
 import ExperienceSection from '@/components/Experience'
+import ProjectsSection from '@/components/Project'
 
 import Link from 'next/link'
 
@@ -35,6 +36,8 @@ export default function HomePage() {
 
       {/* EXPERIENCE */}
       <ExperienceSection />   
+      {/* PROJECTS */}
+      <ProjectsSection />
       <section id="contact" className="rounded-2xl border p-6 grid gap-4">
         <h2 className="text-2xl font-semibold">Get in touch</h2>
         <p className="text-sm text-gray-700 dark:text-gray-300">Open to system engineering and full‑stack opportunities, internships, and collaborations.</p>
