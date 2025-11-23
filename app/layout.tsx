@@ -15,8 +15,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <nav className="container flex items-center justify-between h-14">
             <Link href="/" className="font-semibold">MyPortfolio</Link>
             <div className="flex gap-6 text-sm">
-              <Link href="">Projects</Link>
-              <Link href="#contact">Contact</Link>
+              <a href="#projects">Projects</a>
+              <a href="#contact">Contact</a>
             </div>
           </nav>
         </header>

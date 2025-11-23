@@ -26,7 +26,7 @@ export default function HomePage() {
             <span className="rounded-full border px-3 py-1">IoT & Embedded</span>
           </div>
           <div className="mt-8 flex gap-4">
-            <Link href="#experience" className="rounded-full border px-5 py-2">Experience</Link>
+            <a href="#experience" className="rounded-full border px-5 py-2">Experiences</a>
             <a href="#contact" className="rounded-full border px-5 py-2">Contact</a>
           </div>
         </div>
