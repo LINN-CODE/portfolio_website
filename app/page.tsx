@@ -34,7 +34,10 @@ export default function HomePage() {
       </section>
 
       {/* EXPERIENCE */}
-      <ExperienceSection />
+      <ExperienceSection />   
+      <section id="contact" className="rounded-2xl border p-6 grid gap-4">
+        <h2 className="text-2xl font-semibold">Get in touch</h2>
+        <p className="text-sm text-gray-700 dark:text-gray-300">Open to system engineering and full‑stack opportunities, internships, and collaborations.</p>
         <ContactForm />
 
         
